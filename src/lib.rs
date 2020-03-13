@@ -27,7 +27,7 @@ extern crate serde;
 #[cfg(feature = "ser")]
 #[macro_use]
 extern crate serde_derive;
-use std::time::{Duration, Instant};
+use std::time::Duration;
 
 #[cfg(test)]
 #[macro_use]
@@ -42,6 +42,9 @@ mod frequency_lists;
 pub mod matching;
 mod scoring;
 pub mod time_estimates;
+
+mod time;
+use time::Instant;
 
 /// Contains the results of an entropy calculation
 #[derive(Debug, Clone)]

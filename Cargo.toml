@@ -30,6 +30,9 @@ version = "1"
 optional = true
 version = "1"
 
+[target.'cfg(all(target_arch = "wasm32", not(any(target_os = "wasi"))))'.dependencies]
+js-sys = { version = "0.3", optional = true }
+
 [dev-dependencies]
 quickcheck = "0.9.0"
 serde_json = "1"
@@ -38,6 +41,7 @@ criterion = "0.3"
 [features]
 default = []
 ser = ["serde", "serde_derive"]
+wasmbind = ["js-sys"]
 
 [profile.test]
 opt-level = 2
